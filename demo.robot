@@ -1,5 +1,5 @@
 *** Settings ***
-Library           Selenium2Library
+Library           SeleniumLibrary
 
 *** Test Cases ***
 Open google chrome
