@@ -8,7 +8,7 @@ Resource          resource.robot
 *** Test Cases ***
 Login facebook - Fail
     [tags]    fail
-    Open Browser    about:blank    chrome
+    Open Browser    about:blank    headlesschrome
     Go To           ${url_facebook}
     Verify facebook page           ${title_facebook}
     Input Username and Password    ${input_user}     ${input_pass}       ${username_fail}      ${password_fail}
@@ -16,7 +16,7 @@ Login facebook - Fail
     Verify Login Fail           ${txt_not_me}
 Login facebook - success
     [tags]    success
-    Open Browser    about:blank    chrome
+    Open Browser    about:blank    headlesschrome
     Go To           ${url_facebook}
     Verify facebook page           ${title_facebook}
     Input Username and Password    ${input_user}     ${input_pass}       ${username_success}      ${password_success}
