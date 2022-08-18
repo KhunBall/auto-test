@@ -2,7 +2,7 @@
 Library    SeleniumLibrary
 Library    BuiltIn
 Library    String
-Suite Teardown     Close Browser
+# Suite Teardown     Close Browser
 
 *** Variable ***
 ${url_facebook}        https://www.facebook.com
