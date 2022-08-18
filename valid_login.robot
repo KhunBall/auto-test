@@ -6,10 +6,19 @@ Documentation     A test suite with a single test for valid login.
 Resource          resource.robot
 
 *** Test Cases ***
-Valid Login
-    Open Browser To Login Page
-    Input Username    demo
-    Input Password    mode
-    Submit Credentials
-    Welcome Page Should Be Open
-    [Teardown]    Close Browser
+Login facebook - Fail
+    [tags]    fail
+    Open Browser    about:blank    chrome
+    Go To           ${url_facebook}
+    Verify facebook page           ${title_facebook}
+    Input Username and Password    ${input_user}     ${input_pass}       ${username_fail}      ${password_fail}
+    Click Button Login          ${btn_login}
+    Verify Login Fail           ${txt_not_me}
+Login facebook - success
+    [tags]    success
+    Open Browser    about:blank    chrome
+    Go To           ${url_facebook}
+    Verify facebook page           ${title_facebook}
+    Input Username and Password    ${input_user}     ${input_pass}       ${username_success}      ${password_success}
+    Click Button Login          ${btn_login}
+    Verify Login Success           ${txt_message}
